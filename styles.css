@@ -1,0 +1,178 @@
+:root {
+    --bg-color: #111827;
+    --text-color: #e5e7eb;
+    --text-color-secondary: #a0aec0;
+    --card-bg: rgba(31, 41, 55, 0.6);
+    --input-bg: rgba(31, 41, 55, 0.9);
+    --border-color: rgba(255, 255, 255, 0.1);
+    --primary-accent: #7c3aed;
+    --secondary-accent: #2563eb;
+    --accent-gradient: linear-gradient(135deg, var(--secondary-accent), var(--primary-accent));
+    --link-color: #818cf8;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    margin: 0;
+    padding: 0;
+    line-height: 1.7;
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 2rem;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+h1 {
+    font-size: 2.5rem;
+    font-weight: 600;
+    margin: 0;
+    background: var(--accent-gradient);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.subtitle {
+    color: var(--text-color-secondary);
+    margin-top: 0.5rem;
+}
+
+.editor-container {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.editors-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+}
+
+.editor-section {
+    background: var(--card-bg);
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    padding: 1.5rem;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+}
+
+.editor-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.editor-header h2 {
+    font-size: 1.25rem;
+    margin: 0;
+}
+
+.stats {
+    display: flex;
+    gap: 1rem;
+    color: var(--text-color-secondary);
+    font-size: 0.875rem;
+}
+
+textarea, .output-preview {
+    width: 100%;
+    min-height: 200px;
+    padding: 1rem;
+    background: rgba(0, 0, 0, 0.2);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    color: var(--text-color);
+    font-size: 1rem;
+    resize: vertical;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+textarea:focus {
+    outline: none;
+    border-color: var(--primary-accent);
+    box-shadow: 0 0 0 2px rgba(124, 58, 237, 0.2);
+}
+
+.actions {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.primary-button {
+    background: var(--accent-gradient);
+    background-size: 200% auto;
+    color: white;
+    border: none;
+    padding: 0.75rem 2rem;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.primary-button:hover {
+    background-position: right center;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(124, 58, 237, 0.4);
+}
+
+.secondary-button {
+    background: transparent;
+    color: var(--primary-accent);
+    border: 1px solid var(--primary-accent);
+    padding: 0.75rem 2rem;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.secondary-button:hover {
+    background: rgba(124, 58, 237, 0.1);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(124, 58, 237, 0.2);
+}
+
+.highlight {
+    color: var(--primary-accent);
+    font-weight: 500;
+    position: relative;
+    padding: 0 0.2em;
+    background: linear-gradient(104deg, rgba(124, 58, 237, 0.1) 0.9%, rgba(124, 58, 237, 0.1) 2.4%, rgba(124, 58, 237, 0.05) 5.8%, rgba(124, 58, 237, 0.05) 93%, rgba(124, 58, 237, 0.1) 96%, rgba(124, 58, 237, 0.1) 98%);
+    border-radius: 4px;
+}
+
+.output-preview {
+    background: rgba(0, 0, 0, 0.2);
+    overflow-y: auto;
+}
+
+@media (min-width: 768px) {
+    .editors-wrapper {
+        gap: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .editors-wrapper {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+}
