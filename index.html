@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lumo Humanizer</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Lumo Humanizer</h1>
+            <p class="subtitle">Transform your text naturally</p>
+        </header>
+
+        <main>
+            <div class="editor-container">
+                <div class="editors-wrapper">
+                    <div class="editor-section">
+                        <div class="editor-header">
+                            <h2>Input</h2>
+                            <div class="stats">
+                                <span>Words: <span id="wordCount">0</span></span>
+                                <span>Sentences: <span id="sentenceCount">0</span></span>
+                            </div>
+                        </div>
+                        <textarea id="inputText" placeholder="Enter your text here..."></textarea>
+                    </div>
+
+                    <div class="editor-section">
+                        <div class="editor-header">
+                            <h2>Output</h2>
+                            <div class="stats">
+                                <span>Words: <span id="outputWordCount">0</span></span>
+                                <span>Sentences: <span id="outputSentenceCount">0</span></span>
+                            </div>
+                        </div>
+                        <div id="outputPreview" class="output-preview"></div>
+                        <textarea id="outputText" style="display: none;"></textarea>
+                    </div>
+                </div>
+
+                <div class="actions">
+                    <button id="paraphraseBtn" class="primary-button">Humanize</button>
+                    <button id="copyBtn" class="secondary-button">Copy Result</button>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
